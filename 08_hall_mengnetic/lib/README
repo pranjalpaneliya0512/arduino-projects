@@ -1,0 +1,15 @@
+#include <Arduino.h>
+
+#define SHOCK_PIN 2
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(SHOCK_PIN, INPUT);
+}
+
+void loop() {
+    if (digitalRead(SHOCK_PIN) == HIGH) {
+        Serial.println("SHOCK DETECTED!");
+        delay(200);
+    }
+}
